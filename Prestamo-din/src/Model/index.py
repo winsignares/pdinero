@@ -8,6 +8,8 @@ class index(db.Model):
     monto = db.Column(db.String(50))
     interes= db.Column(db.String(50))
     tiempo = db.Column(db.Date)
+    id_monto= db.Column(db.Integer, db.ForeignKey('tblmontos.id'))
+    id_logins= db.Column(db.Integer, db.ForeignKey('tbllogins.id'))
     
     def __init__(self, monto, interes, tiempo):
         

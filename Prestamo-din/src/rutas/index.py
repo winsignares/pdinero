@@ -7,7 +7,7 @@ routes_index = Blueprint("routes_index", __name__)
 @routes_index.route('/indexindex', methods=['GET'] )
 def indexindex():
     
-    return render_template('/main/index.html')
+    return render_template('/index.html')
 
 @routes_index.route('/guardar',methods=['POST'])
 def saveprovider():
@@ -22,3 +22,6 @@ def saveprovider():
     db.session.commit()
     return monto,interes,tiempo
     
+@routes_index.route('/indexregistro', methods=['GET'] )
+def indexregistro():
+    return render_template('/main/registro.html')

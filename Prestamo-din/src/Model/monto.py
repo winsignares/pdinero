@@ -9,7 +9,7 @@ class montos(db.Model):
     cuota= db.Column(db.Float)
     capital = db.Column(db.Float)
     interes= db.Column(db.Date)
-    # id_cuotas= db.column(db.Integer, db.Foreignkey('tblcuotas.id'))
+    id_cuotas= db.Column(db.Integer, db.ForeignKey('tblcuotas.id'))
     
     
     def __init__(self, fecha, cuota, capital, interes,id_cuotas):
