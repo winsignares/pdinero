@@ -12,9 +12,9 @@
 <!-- llamada a bootstrap -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<body>
-    <div class="container">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style2.css')}}">
+<body class="index">
+    <div class="contain">
         <div class="row mt-3">
             <div class="col-6">
                 <h2>Calcular amortización método francés</h2>
@@ -47,7 +47,6 @@
                 </table>
             </div>
         </div>
-
     </div>
     <!-- llamada a bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

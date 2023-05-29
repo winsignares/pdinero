@@ -117,15 +117,3 @@ body{
     background-color: #276e0d;
     border: solid 2px rgb(25, 255, 25);
 }
-
-.body{
-    background-image: linear-gradient(#bef6f7, #6affc5);
-    width: 100vh;
-    height: 100vh;
-}
- 
-.container{
-    background-image: linear-gradient(#bef6f7, #6affc5);
-    width: 100vh;
-    height: 100vh;
-}

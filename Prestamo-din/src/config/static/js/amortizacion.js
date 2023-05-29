@@ -10,7 +10,6 @@ function guardar() {
             llenarTabla.removeChild(llenarTabla.firstChild);
         }
 
-
         let fechas = [];
         let fechaActual = Date.now();
         let mes_actual = moment(fechaActual);
@@ -31,18 +30,16 @@ function guardar() {
 
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${fechas[i]}</td>
-                <td>${cuota.toFixed(2)}</td>
-                <td>${pagoCapital.toFixed(2)}</td>
-                <td>${pagoInteres.toFixed(2)}</td>
-                <td>${monto.toFixed(2)}</td>
+                <td class="lista">${fechas[i]}</td>
+                <td class="lista">${cuota.toFixed(2)}</td>
+                <td class="lista">${pagoCapital.toFixed(2)}</td>
+                <td class="lista">${pagoInteres.toFixed(2)}</td>
+                <td class="lista">${monto.toFixed(2)}</td>
             `;
             llenarTabla.appendChild(row);
         }
     }
 
     calcularCuota(monto, interes, tiempo);
- 
-    alert("¡Funciona correctamente!");
 
 }

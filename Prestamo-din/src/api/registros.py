@@ -43,5 +43,13 @@ def actualizarP():
     regusuario.Nombre_cuotas = reg
     db.session.commit()
     return redirect('/registros')
+
+@routes_registros.route('/saveregistros', methods=['POST'])
+def guardar():    
+    newregistros = request.json['nombre', 'apellido', 'dirección', 'correo','telefono']
+    new_reg = registros(newregistros)
+    db.session.add(new_reg)
+    db.session.commit()
+    return redirect('/registros')
 #metodos para registro final 
        
