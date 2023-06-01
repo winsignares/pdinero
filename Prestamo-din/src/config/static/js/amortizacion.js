@@ -1,9 +1,28 @@
 function guardar() {
-    const monto = document.getElementById('monto').value;
-    const tiempo = document.getElementById('tiempo').value;
-    const interes = document.getElementById('interes').value;
+    const monto1 = document.getElementById('monto').value;
+    const tiempo1 = document.getElementById('tiempo').value;
+    const interes1 = document.getElementById('interes').value;
     const llenarTabla = document.querySelector('#lista-tabla tbody');
-    console.log(monto);
+    console.log(monto1,interes1,tiempo1);
+  
+    axios.post('/fronted/guardarmonton', {
+        monto: monto1,
+        interes: interes1,
+        tiempo: tiempo1
+    
+    }, {
+        headers: {
+        'Content-Type': 'multipart/form-data'
+
+        }
+    }
+    ).then((res) => {
+        console.log(res.data)
+    })
+    .catch((error) => {
+        console.error(error)
+    })
+
 
     function calcularCuota(monto, interes, tiempo) {
         while (llenarTabla.firstChild) {
@@ -40,6 +59,6 @@ function guardar() {
         }
     }
 
-    calcularCuota(monto, interes, tiempo);
-
+    calcularCuota(monto1, interes1, tiempo1);
+    alert("si funciona")
 }

@@ -7,7 +7,7 @@ class index(db.Model):
     id  = db.Column(db.Integer, primary_key=True)
     monto = db.Column(db.String(50))
     interes= db.Column(db.String(50))
-    tiempo = db.Column(db.Date)
+    tiempo = db.Column(db.String(50))
     id_monto= db.Column(db.Integer, db.ForeignKey('tblmontos.id'))
     id_logins= db.Column(db.Integer, db.ForeignKey('tbllogins.id'))
     
