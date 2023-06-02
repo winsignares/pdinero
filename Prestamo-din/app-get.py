@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Hi There!
+# Hi There! wii
 #
 # You may be wondering what this giant blob of binary data here is, you might
 # even be worried that we're up to something nefarious (good for you for being
