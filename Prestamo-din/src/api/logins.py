@@ -15,8 +15,9 @@ logins_schema = loginsSchema(many=True)
 #---------SAVE/CREAR------------
 @routes_logins.route('/savelogins', methods=['POST'])
 def guardar_logins():    
-    newlogins = request.json['usuario','contraseña']
-    new_log = logins(newlogins)
+    user = request.form['user']
+    contrasena = request.form['password']
+    new_log = logins(user,contrasena)
     db.session.add(new_log)
     db.session.commit()
     return redirect('/logins')

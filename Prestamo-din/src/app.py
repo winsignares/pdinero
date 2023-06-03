@@ -24,10 +24,12 @@ app.register_blueprint(routes_registros, url_prefix="/api")
 
 #importar routes de los html
 from rutas.index import routes_index
+from rutas.verificar import routes_login
 # from Model.index import routes_index
 
 #ubicacion de los html
 app.register_blueprint(routes_index, url_prefix="/fronted")
+app.register_blueprint(routes_login, url_prefix="/fronted")
 
 
 

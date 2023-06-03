@@ -31,14 +31,15 @@
                 <input placeholder="Ingresa tu contraseña" type="password" id="contraseña">
             </div>
             <div class="password-olvidada">
-                <a href="/fronted/indexregistro">¿Olvidaste tu contraseña?</a>
+                <a href="/fronted/indexregistro">Registrarse</a>
             </div>
             <div>
-                <a href="/fronted/indexindex" class="btn btn-primary" type="submit">Login</a>
+                <a onclick="ingresar()" class="btn btn-primary" type="submit">Login</a>
             </div>
         </form>
     </div>
 
 </body>
-
+<script src="{{url_for('static', filename='js/inicio_logn.js')}}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </html>

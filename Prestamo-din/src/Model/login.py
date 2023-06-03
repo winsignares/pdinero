@@ -1,12 +1,12 @@
-from config.db import db, app, ma 
+from config.db import db, app, ma
 
 class logins(db.Model):
     __tablename__ = "tbllogins"
     
     
     id  = db.Column(db.Integer, primary_key=True)
-    usuario = db.Column(db.Float)
-    contraseña = db.Column(db.Float)
+    usuario = db.Column(db.String(50))
+    contraseña = db.Column(db.String(50))
 
     
     def __init__(self, usuario, contraseña):

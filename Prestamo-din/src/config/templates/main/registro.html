@@ -17,7 +17,7 @@
     <div class="contenedor-formulario contenedor">
         <div class="imagen-formulario">
         </div>
-        <form class="formulario">
+        <form class="formulario" id="formulario">
             <div class="texto-formulario">
                 <h2>Bienvenido</h2>
                 <p>REGISTRATE</p>
@@ -32,15 +32,16 @@
             </div>
             <div class="input">
                 <label for="contraseña">Confirmar contraseña</label>
-                <input placeholder="Ingresa tu contraseña" type="password" id="contraseña">
+                <input placeholder="Ingresa tu contraseña" type="password" id="confirmar_contraseña">
             </div>
             <br>
             <div>
-                <a href="/fronted/indexindex" class="btn btn-primary" type="submit">Login</a>
+                <a id="btn" class="btn btn-primary" type="button" onclick="Guardarusuario()" >Registrate</a>
             </div>
         </form>
     </div>
 
 </body>
-
+<script src="{{url_for('static', filename='js/registerlogin.js')}}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </html>

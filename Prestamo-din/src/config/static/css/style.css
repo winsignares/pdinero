@@ -106,7 +106,7 @@ body{
     margin-top: 20px;
     transition: background-color .3s ease-in-out;
 }
-.input input[type="submit"]:hover{
+.input input[type="button"]:hover{
   
     cursor: pointer;
     background-color: var(--azulOscuro);
