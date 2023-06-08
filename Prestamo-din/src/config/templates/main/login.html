@@ -1,15 +1,13 @@
 {%extends './layout.html'%}
 {% block body %}
-    <title>registro</title>
-  
-<body class="container">
+<title>login</title>
     <div class="contenedor-formulario contenedor">
         <div class="imagen-formulario">
         </div>
-        <form class="formulario" id="formulario">
+        <form class="formulario">
             <div class="texto-formulario">
-                <h2>Bienvenido</h2>
-                <p>REGISTRATE</p>
+                <h2>Bienvenido de nuevo</h2>
+                <p>Inicia sesión con tu cuenta</p>
             </div>
             <div class="input">
                 <label for="usuario">Usuario</label>
@@ -19,20 +17,16 @@
                 <label for="contraseña">Contraseña</label>
                 <input placeholder="Ingresa tu contraseña" type="password" id="contraseña">
             </div>
-            <div class="input">
-                <label for="contraseña">Confirmar contraseña</label>
-                <input placeholder="Ingresa tu contraseña" type="password" id="confirmar_contraseña">
-            </div>
-            <br>
-            <div>
-                <button id="btn" class="btn btn-primary" onclick="Guardarusuario()" >Registrate</button>
+            <div class="password-olvidada">
+                <a href="/fronted/indexregistros">Registrarse</a>
             </div>
             <div>
-                <a  class="btn btn-primary" href="indexlogin" >login</a>
+                <a onclick="ingresar()" class="btn btn-primary" type="submit">Login</a>
             </div>
         </form>
     </div>
 
 
-<script src="{{url_for('static', filename='js/registerlogin.js')}}"></script>
+<script src="{{url_for('static', filename='js/inicio_logn.js')}}"></script>
+
 {% endblock %}

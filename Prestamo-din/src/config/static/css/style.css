@@ -88,7 +88,7 @@ body{
 }
 .password-olvidada a{
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 22px;
 }
 .input input{
@@ -115,5 +115,5 @@ body{
 .btn{
     width: 400px;
     background-color: #276e0d;
-    border: solid 2px rgb(25, 255, 25);
+    border: solid 2px rgb(98, 235, 98);
 }

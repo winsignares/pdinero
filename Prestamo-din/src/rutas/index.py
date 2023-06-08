@@ -9,9 +9,7 @@ def indexindex():
     
     return render_template('/index.html')
 
-@routes_index.route('/indexregistro', methods=['GET'] )
-def indexregistro():
-    return render_template('/main/registro.html')
+
 
 @routes_index.route('/guardarmonton',methods=['POST'])
 def savemonton():

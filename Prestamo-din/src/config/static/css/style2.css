@@ -9,10 +9,12 @@
 }
 
 .contain{
+    
     position: absolute;
     border: solid 1px #53b4f7;
     border-radius: 10px;
     padding: 20px;
+    
 }
 
 .lista{

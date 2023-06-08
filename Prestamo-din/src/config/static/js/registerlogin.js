@@ -18,6 +18,7 @@ function Guardarusuario() {
         alert(res.data)
     })
     .catch((error) => {
+        window.location.href="/fronted/indexindex"
         console.error(error)
         alert(error)
     })

@@ -4,6 +4,9 @@ from Model.login  import logins, loginsSchema
 
 routes_login = Blueprint("routes_login", __name__)
 
+@routes_login.route("/indexlogin", methods=['GET'])
+def login():
+    return render_template("/main/login.html")
 #logins
 logins_schema = loginsSchema()
 logins_schema = loginsSchema(many=True)
