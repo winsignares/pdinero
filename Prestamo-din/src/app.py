@@ -7,12 +7,14 @@ from api.cuotas import routes_cuotas
 from api.logins import routes_logins
 from api.montos import routes_montos
 from api.registros import routes_registros
+#from api.resultados import routes_resultados
 
 #ubicacion del api de las tablas 
 app.register_blueprint(routes_cuotas, url_prefix="/api") 
 app.register_blueprint(routes_montos, url_prefix="/api")
 app.register_blueprint(routes_logins, url_prefix="/api")
 app.register_blueprint(routes_registros, url_prefix="/api")
+#app.register_blueprint(routes_resultados, url_prefix="/api")
 
 # tablas de modelo 
 

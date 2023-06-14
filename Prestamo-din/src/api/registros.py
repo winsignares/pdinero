@@ -8,7 +8,7 @@ from Model.registro  import registros, registrosSchema
 routes_registros = Blueprint("routes_registros", __name__)
 
 #registros
-registros_schema = registrosSchema()
+registro_schema = registrosSchema()
 registros_schema = registrosSchema(many=True)
 
 #metodos para registro inicio
