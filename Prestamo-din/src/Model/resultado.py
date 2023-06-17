@@ -5,7 +5,7 @@ class resultado (db.Model):
     
     
     id  = db.Column(db.Integer, primary_key=True)
-    fecha = db.Column(db.Datetime)
+    fecha = db.Column(db.Date)
     cuota = db.Column(db.Integer)
     capital = db.Column(db.Integer)
     interes = db.Column(db.Integer)

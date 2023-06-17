@@ -45,10 +45,24 @@ def actualizarP():
     return redirect('/resultados')
 
 @routes_resultados.route('/saveresultados', methods=['POST'])
-def guardar():    
-    newresultados = request.json['fecha', 'cuota', 'capital', 'interes','saldo']
-    new_res = resultado(newresultados)
+def guardar_monton():
+    monto = float(request.json.get('monto'))
+    interes = float(request.json.get('interes'))
+    tiempo = int(request.json.get('tiempo'))
+
+    new_res = resultado(monto=monto, interes=interes, tiempo=tiempo)
     db.session.add(new_res)
     db.session.commit()
-    return redirect('/resultados')
+    
+@routes_resultados.route('/saveArray', methods=['POST'])
+def guardar_arrayw():
+    monto = float(request.json.get('monto'))
+    interes = float(request.json.get('interes'))
+    tiempo = int(request.json.get('tiempo'))
+
+    new_res = resultado(monto=monto, interes=interes, tiempo=tiempo)
+    db.session.add(new_res)
+    db.session.commit()
+
+
 #metodos para resultado final 

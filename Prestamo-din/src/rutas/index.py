@@ -25,4 +25,18 @@ def savemonton():
     db.session.commit()
     return "ok"
     
+# @routes_index.route('/guardarArray',methods=['POST'])
+# def saveArray():
+
+#     monto = request.form['monto']
+#     interes = request.form['interes']
+#     tiempo = request.form['tiempo']
+    
+#     print(monto,interes,tiempo)
+    
+#     new_inde = index(monto,interes,tiempo)
+#     db.session.add(new_inde)
+#     db.session.commit()
+#     return "ok"
+    
 
