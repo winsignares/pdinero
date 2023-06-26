@@ -86,6 +86,21 @@ function generarResultado() {
 }
 
 
+var modal = document.querySelector('.modal1');
+var closeBtn = document.querySelector('.close1');
 
+// Añade un evento click a cualquier parte del modal para cerrarlo también
+modal.addEventListener('click', function (event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+//Función para abrir el modal CASTIGO 
+function openModal(id) {
+  const ontide = document.getElementById('id-e')
+  ontide.value = id
+  modal.style.display = 'block';
+}
 
 
