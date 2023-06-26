@@ -2,10 +2,13 @@ function Guardarusuario() {
     
     const user = document.getElementById("usuario").value;
     const password = document.getElementById("contraseña").value; 
+    const password2 = document.getElementById("confirmar_contraseña").value; 
     
-    axios.post('/fronted/savelogins', {
-        usuario: user,
-        contraseña: password
+    console.log(user,password,password2)
+    axios.post('/fronted/saveregistro', {
+        usuario1: user,
+        contrasena1: password,
+        confirmar1 : password2
     
     }, {
         headers: {

@@ -5,21 +5,17 @@ class registros (db.Model):
     
     
     id  = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(30))
-    apellido= db.Column(db.String(30))
-    dirección = db.Column(db.Float)
-    correo= db.Column(db.String(30))
-    telefono= db.Column(db.Integer)
-    id_logins= db.Column(db.Integer, db.ForeignKey('tbllogins.id'))
+    usuario1 = db.Column(db.String(110))
+    contrasena1= db.Column(db.String(110))
+    confirmar1 = db.Column(db.String(110))
+
     
     
-    def __init__(self, nombre, apellido, dirección, correo,telefono):
+    def __init__(self, usuario1, contrasena1, confirmar1):
         
-        self.nombre = nombre
-        self.apellido = apellido
-        self.dirección = dirección
-        self.correo = correo
-        self.telefono = telefono
+        self.usuario1 = usuario1
+        self.contrasena1 = contrasena1
+        self.confirmar1 = confirmar1
         
         
 with app.app_context():
@@ -27,4 +23,4 @@ with app.app_context():
 
 class registrosSchema(ma.Schema):
     class Meta:
-        fields = ('id','nombre', 'apellido', 'dirección', 'correo','telefono')
+        fields = ('id','usuario1', 'contrasena1', 'confirmar1')

@@ -3,10 +3,10 @@ from config.db import db, app, ma
 import os
 
 #importar routes de las tablas 
-from api.cuotas import routes_cuotas
-from api.logins import routes_logins
-from api.montos import routes_montos
 from api.registros import routes_registros
+from api.logins import routes_logins
+from api.cuotas import routes_cuotas
+from api.montos import routes_montos
 from api.resultados import routes_resultados
 
 #ubicacion del api de las tablas 

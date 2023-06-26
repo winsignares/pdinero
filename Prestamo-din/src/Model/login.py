@@ -5,14 +5,16 @@ class logins(db.Model):
     
     
     id  = db.Column(db.Integer, primary_key=True)
-    usuario = db.Column(db.String(50))
-    contraseña = db.Column(db.String(50))
+    usuario = db.Column(db.String(110))
+    contraseña = db.Column(db.String(110))
+    id_registros = db.Column(db.Integer, db.ForeignKey('tblregistros.id'))
 
     
-    def __init__(self, usuario, contraseña):
+    def __init__(self, usuario, contraseña,id_registros):
         
         self.usuario = usuario
         self.contraseña = contraseña
+        self.id_registros = id_registros
        
         
         
@@ -21,4 +23,4 @@ with app.app_context():
 
 class loginsSchema(ma.Schema):
     class Meta:
-        fields = ('id','usuario','contraseña')
+        fields = ('id','usuario','contraseña','id_registros')
