@@ -28,8 +28,6 @@ function calcularCuota() {
     var interes = document.getElementById("interes").value;
     var tiempo = document.getElementById("tiempo").value;
 
-
-  
     var llenarTabla = document.querySelector('#lista-tabla tbody');
 
     while (llenarTabla.firstChild) {
@@ -64,9 +62,30 @@ function calcularCuota() {
         `;
         llenarTabla.appendChild(row);
     }
-
 }
 
 calcularCuota();
+
+
+function generarResultado() {
+    const monto = document.getElementById('monto').value;
+    const interes = document.getElementById('interes').value;
+    const tiempo = document.getElementById('tiempo').value;
+
+    // Realizar el cálculo y obtener los valores necesarios para el resultado
+
+    const resultado = `Monto: ${monto}\nInterés: ${interes}\nTiempo: ${tiempo}`;
+
+    // Mostrar el resultado en una ventana emergente con SweetAlert
+    Swal.fire({
+        title: 'Cálculos del préstamo',
+        html: resultado,
+        icon: 'info',
+        confirmButtonText: 'Cerrar'
+    });
+}
+
+
+
 
 
