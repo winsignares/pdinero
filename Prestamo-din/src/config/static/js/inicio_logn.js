@@ -32,5 +32,5 @@ function ingresar() {
   
     var form = document.getElementById("formulario");
     form.reset();
+
   }
-  

@@ -1,6 +1,7 @@
 {% extends './layout.html' %}
 {% block body %}
-<body class="index">
+
+<body class="index"> 
     <div class="contain">
         <div class="row ">
             <div class="col-6">
@@ -18,7 +19,8 @@
                     <input type="text" class="form-control" id="interes" placeholder="Ingresar tasa de interés mensual">
                 </div>
                 <button type="submit" class="btn btn-primary" onclick="calcularCuota(), guardar(),  generarResultado();">Calcular</button>
-                <button type="submit" class="btn btn-primary" onclick="calcularCuota(), guardar(),  generarResultado();">ver</button>
+                
+
             </div>
             <div class="col-6">
                 <table id="lista-tabla" class="table">
@@ -36,45 +38,36 @@
                 </table>
             </div>
         </div>
+        <!-- Agrega el botón para abrir el modal -->
+  <button type="button" class="btn btn-primary" onclick="mostrarHistorialModal()">Ver Historial</button>
     </div>
+    <nav class="navbar">
+        <button class="btn btn-danger" style="float: right;" onclick="cerrar()" id="cerrar">Cerrar sesión</button>
+    </nav>
+    <div id="history"></div>
 
-    <div class="modal" id="modalactu2">
-        <div class="modal-content1">
-            <span class="close1"></span>
-            <div class="mensaje1">
-                <h1>Actualización De Datos</h1>
-            </div>
-            <br>
-            <div class="text">
-                <form class="form-control">
-                    <form>
-                        <label>Id del aprendiz:</label>
-                        <input class="actu" type="text" disabled id="id-e1">
-                        <br>
-                        <label>Nombres:</label>
-                        <input class="actu" type="text" id="nombre">
-                        <br>
-                        <label>Apellidos:</label>
-                        <input class="actu" type="text" id="Apellido">
-                        <br>                         
-                        <label>Curso:</label>
-                        <input class="actu" type="text" id="curso">
-                        <br>
-                        <label>N.Ficha:</label>
-                        <input class="actu" type="text" id="Nficha">
-                        <label>N.Documento:</label>
-                        <input class="actu" type="text" id="documento">                         
-                        <br>
-                        <form onsubmit="return validarmodal1()">
-                            <!-- contenido del formulario -->
-                        <input class="btn-actualizar" type="button" onclick="openModal()" value="Actualizar Datos">
-                          </form>
-                    </form>
-                </form>
-            </div>
-        </div>  
+    <!-- Agrega el siguiente código HTML para el modal -->
+<div class="modal fade" id="historialModal" tabindex="-1" role="dialog" aria-labelledby="historialModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="historialModalLabel">Historial de cálculos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="historialBody">
+            
+          <!-- Aquí se mostrará el historial -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
     </div>
+  </div> 
 </body>
+
 
 <footer style="position:fixed; left:0px; bottom:0px; height:30px; width:100%;">
     <small>&copy; Copyright 2020, Erick Cerna R</small>

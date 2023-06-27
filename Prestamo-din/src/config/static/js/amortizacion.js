@@ -1,9 +1,11 @@
 function guardar() {
+    const nombre = "John Doe";
     const monto1 = document.getElementById('monto').value;
     const tiempo1 = document.getElementById('tiempo').value;
     const interes1 = document.getElementById('interes').value;
     console.log(monto1, interes1, tiempo1);
 
+    
     axios.post('/fronted/guardarmonton', {
         monto: monto1,
         interes: interes1,
@@ -21,12 +23,18 @@ function guardar() {
         .catch((error) => {
             console.error(error)
         })
+
+  
 }
 
 function calcularCuota() {
     var monto = document.getElementById("monto").value;
     var interes = document.getElementById("interes").value;
     var tiempo = document.getElementById("tiempo").value;
+
+    document.getElementById("monto").value = "";
+    document.getElementById("interes").value = "";
+    document.getElementById("tiempo").value = "";
 
     var llenarTabla = document.querySelector('#lista-tabla tbody');
 
@@ -83,6 +91,7 @@ function generarResultado() {
         icon: 'info',
         confirmButtonText: 'Cerrar'
     });
+
 }
 
 
@@ -96,11 +105,54 @@ modal.addEventListener('click', function (event) {
   }
 });
 
-//Función para abrir el modal CASTIGO 
-function openModal(id) {
-  const ontide = document.getElementById('id-e')
-  ontide.value = id
-  modal.style.display = 'block';
-}
+
+function cerrar() {
+    // Perform the logout logic here
+    // For example, redirect the user to the login page
+    window.location.href = "/fronted/indexlogin";
+  }
+
+  // Add click event listener to the logout button
+  document.getElementById("cerrar").addEventListener("click", function() {
+    cerrar();
+  });
+
+  // Disable caching to prevent page from appearing in back button history
+  window.onpageshow = function(event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+
+  function mostrarHistorial() {
+    const history = JSON.parse(localStorage.getItem('history'));
+    const historyBody = document.getElementById('historialBody');
+    historyBody.innerHTML = '';
+  
+    if (history && history.length > 0) {
+      const ul = document.createElement('ul');
+      ul.classList.add('list-group');
+  
+      history.forEach(entry => {
+        const li = document.createElement('li');
+        li.classList.add('list-group-item');
+        li.textContent = `Nombre: ${entry.nombre}, monto: ${entry.monto1}, interes: ${entry.interes1}, tiempo: ${entry.tiempo1}`;
+        ul.appendChild(li);
+      });
+  
+      historyBody.appendChild(ul);
+    } else {
+      const p = document.createElement('p');
+      p.textContent = 'No hay registros en el historial';
+      historyBody.appendChild(p);
+    }
+  }
+  
+  function mostrarHistorialModal() {
+    mostrarHistorial();
+    $('#historialModal').modal('show');
+  }
+  
 
 
+  
